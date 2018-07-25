@@ -1,0 +1,345 @@
+video {
+    pointer-events: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#local-video-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    display: none;
+    background-color: rgb(29, 27, 27);
+}
+
+#local-video-container video {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+
+    /*--- for mirror video screen purpose ---*/
+    /* top: 50%;
+    left: 50%; */
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+}
+
+
+
+#remote-videos-container {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: right;
+    z-index: 20;
+}
+
+#remote-videos-container video {
+    max-width: 280px;
+    border: 2px solid #7d7d7d;
+    margin-right: 10px;
+    object-fit: cover;
+    z-index: 20;
+
+    /*--- for mirror video screen purpose ---*/
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+
+}
+
+/* video button */
+.video-buttons {
+    position: absolute;
+    z-index: 30;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+}
+
+#options {
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    margin-left: 10vh;
+    z-index: 30;
+    margin-bottom: 40px;
+    display: none;
+}
+
+.glyphicon {
+    color: #FAFBFE;
+}
+
+.btn-group-options button {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+    background-color: #70AFE4;
+    border-radius: 50% !important;
+    -webkit-box-shadow: 0px 0px 3px 1px #7d7d7d;
+    -moz-box-shadow: 0px 0px 3px 1px#7d7d7d;
+    box-shadow: 0px 0px 3px 1px #7d7d7d;
+}
+
+.btn-group-options button:hover {
+    background-color: #CADDE6;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.28);
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+}
+
+.btn-group-options button:active {
+    background-color: #7d7d7d;
+    box-shadow: 0 5px #666;
+    transform: translateY(1px);
+}
+
+/*--- face masking ---*/
+.face-masking-icons {
+    position: absolute;
+    z-index: 30;
+    bottom: 20%;
+    right: 0;
+    height: 50%;
+    width: 20%;
+    display:none; 
+}
+.face-masking-icon{
+    cursor: pointer;
+    display:none;
+}
+
+#_imageData, #mask{
+    display: none;
+}
+
+#trump{
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+}
+
+/* timer */
+#timer {
+    height: 50px;
+    bottom: 0;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    background-color: #70AFE4;
+    opacity: .3;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    border-top: #4173CE solid;
+}
+
+/*--- conference-room page ---*/
+#room-section {
+    position: absolute;
+    width: 400px;
+    top: 35%;
+    left: 50%;
+    margin-left: -200px;
+    z-index: 2;
+}
+
+#room-section .room-id-block {
+    padding: 0px;
+}
+
+#room-id {
+    width: 100%;
+    border: 0px;
+    border-bottom: 2px solid black;
+    padding: 5px;
+}
+
+#btn-join {
+    width: 80px;
+}
+
+#rejoin {
+    height: 100px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background-color: #70AFE4;
+    font-size: 20px;
+    border-top: #4173CE solid;
+    display: none;
+    padding-left: 10vh;
+    text-align: center;
+    z-index: 23;
+    padding-top:10px;
+}
+#temp-leave{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 22;
+    display: none;
+}
+
+.full-screen-container{
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    object-fit: cover;
+}
+
+/*--- Loading ---*/
+#login-loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 50;
+    background: white;
+    top: 0;
+    margin-top: -100px;
+}
+
+#loading, #init-loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 50;
+    background: white;
+    display: none;
+}
+#init-loading {
+    display:block;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    margin-top: -85px;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #006fe2;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+/*--- login ---*/
+.login-section {
+    margin: 100px auto 0 auto;
+}
+
+#profile {
+    background: rgba(222, 222, 222, 0.54);
+    padding: 2px 10px 2px 10px;
+    position: fixed;
+    z-index: 12;
+    right: 0;
+}
+
+#logout-btn {
+    cursor: pointer;
+}
+
+.facebook {
+    position: absolute;
+}
+
+#google-login-button, #twitter-login-button {
+    font-size: 16px;
+    background-color: #DD4C3B;
+    color: white;
+    padding: 5px 8px 8px 8px;
+    margin-top: 60px;
+    border-radius: 3px;
+    cursor: pointer;
+    min-width: 233px;
+}
+
+#google-login-button .icon {
+    padding-right: 6px;
+}
+
+#fb-root {
+    display: none;
+}
+
+#twitter-login-button {
+    font-size: 16px;
+    background-color: #1DA1F2;
+    color: white;
+    padding: 5px 8px 8px 8px;
+    margin-top: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#twitter-login-button .icon {
+    padding-right: 17px;
+}

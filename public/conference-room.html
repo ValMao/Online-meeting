@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Conference Room</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- jQuery JS -->
+    <script src="/js/jquery-3.3.1.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <!-- WebRTC -->
+    <script src="/js/RTCMultiConnection.js"></script>
+    <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+    <!--icons-->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+</head>
+
+<body>
+    <div id="room-section">
+        <div class="row">
+            <div class="col-8 room-id-block">
+                <input type="text" id="room-id" placeholder="Room ID">
+            </div>
+            <div class="col-4">
+                <button id="btn-join" class="btn btn-primary">Join</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="profile">
+        <div id="login-area">
+            Hi,
+            <span id="user-name">User</span>!
+            <span id="logout-btn" onclick="logoutAll()">
+                Logout
+            </span>
+        </div>
+    </div>
+
+    <div class="video-buttons">
+        <div class="btn-group-options" id="options">
+            <div class="row">
+                <button type="button" id="btnMuteVideo" class="btn btn-lg btn-circle" data-toggle="tooltip" data-placement="right" title="Mute Video">
+                    <span class="glyphicon glyphicon-facetime-video"></span>
+                </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btnMuteAudio" class="btn btn-lg btn-circle" data-toggle="tooltip" data-placement="right" title="Mute Audio">
+                    <span class="glyphicon glyphicon-volume-off"></span>
+                </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btnFullScreen" class="btn btn-lg btn-circle" data-toggle="tooltip" data-placement="right" title="Full Screen">
+                    <span class=" glyphicon glyphicon-resize-full"></span>
+                </button>
+            </div>
+            <div class="row">
+                <button type="button" id="btnHangUp" class="btn btn-lg btn-circle" data-toggle="tooltip" data-placement="right" title="Hang Up">
+                    <span class=" glyphicon glyphicon-off"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="full-screen-container">
+        <div id="local-video-container">
+            <div id="timer"></div>
+        </div>
+        <div id="remote-videos-container"></div>
+    </div>
+    <div id="init-loading"></div>
+    <div id="loading">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+
+    <div id="temp-leave"></div>
+    <div id="rejoin">
+        <p id="videoTime" class="text-center"></p>
+        <div class="rejoin-buttons">
+            <button id="btnRejoin" class="rejoin btn btn-success">Rejoin</button>
+            <button id="leave-forever" class="btn btn-danger">Don't come back ANYMORE!</button>
+        </div>
+    </div>
+
+    <!-- face masking -->
+    <canvas	id="_imageData"></canvas>
+    <div id="mask" style="position: absolute; top: 0; left: 0; transform-origin: 50% 50%">
+        <!-- <img src="/images/brfv4_lion.png" style="position: absolute; top: -190px; left: -240px;">  -->
+        <img src="/images/trump-surprised.png" style="position: absolute; top: -160px; left: -240px;">
+    </div>
+    <div class="face-masking-icons">
+        <div id="trump" class="face-masking-icon" >realDonaldTrump</div>
+    </div>
+
+    <!-- google login api library -->
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <!-- firebasejs for twitter login -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <!-- jQuery Cookie  -->
+    <script src="/js/jquery.cookie.js"></script>
+    <!--jQuery timer -->
+    <script src="/js/jquery-timer.js"></script>
+    <!-- login js -->
+    <script src="/js/login.js"></script>
+
+    <!-- face masking js -->
+    <script>
+        var brfv4Example = { stats: {} };
+        var brfv4BaseURL = "/js/libs/brf_wasm/";
+    </script>
+    <script async src="/js/BRFv4Stats.js"></script>
+    <script src="/js/face-masking.js"></script>
+
+    <!-- The conference room -->
+    <script src="/js/conference-room.js"></script>
+
+
+    
+    
+</body>
+
+</html>
