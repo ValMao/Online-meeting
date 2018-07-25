@@ -1,5 +1,6 @@
 # A lightweight Web Video Conferencing service
 This is a solution to connect anyone with an online conference room by room ID.
+Cooperate with Run Qin in purpose of assignment. 
 ## Setup
 #### 1. Clone or download the zip of the project,
 #### 2. Install [Node.js](http://nodejs.org) 
